@@ -1,5 +1,14 @@
 # COVID-19 Testing Site Finder with Risk Assessment
 
+## What we built
+A static site for users to take a COVID-19 risk assessment or search for testing site locations. 
+Key components of the site include:
+- A COVID-19 risk assessment
+- A simple ETL for ingesting testing site data from a `.csv` file
+- A user experience to search for testing sites by location (including a map view) and view testing site-specific detail 
+- A recommendation engine to recommend testing window slots at each testing site
+- A confirmation page to surface any critical information to prepare the user for testing
+
 ## Getting Started
 
 * Install [Node.js](https://nodejs.org/en/) >= 8.9.4 and npm >= 5.6.0
