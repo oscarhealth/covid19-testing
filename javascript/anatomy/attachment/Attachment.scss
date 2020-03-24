@@ -1,0 +1,33 @@
+.attachment {
+  display: inline-block;
+}
+
+.attachedContent {
+  display: inline-block;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.attachedContent_isInlineMount {
+  position: absolute;
+}
+
+.attachedContent_showing {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.trigger {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.mount {
+  pointer-events: none;
+  position: relative;
+}

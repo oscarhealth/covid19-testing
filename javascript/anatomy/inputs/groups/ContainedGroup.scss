@@ -1,0 +1,16 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.group {
+  display: flex;
+}
+
+.child:hover {
+  position: relative;
+  transition: z-index $transition-normal $anatomy-field-easing-curve;
+  z-index: $base-z;
+}
+
+.child + .child {
+  margin-left: -1px;
+}

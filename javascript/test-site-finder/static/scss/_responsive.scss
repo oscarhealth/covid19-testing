@@ -1,0 +1,43 @@
+$xlg_min_size: 1280px;
+$lg_min_size: 1024px;
+$md_min_size: 768px;
+
+/**
+  Important! These styles cascade.
+  Use them in order from smallest -> largest when defining styles.
+*/
+
+/* stylelint-disable at-rule-no-unknown */
+@mixin sm_size {
+  @content;
+}
+
+@mixin md_size {
+  @include media_above($md_min_size) {
+    @content;
+  }
+}
+
+@mixin lg_size {
+  @include media_above($lg_min_size) {
+    @content;
+  }
+}
+
+@mixin xlg_size {
+  @include media_above($xlg_min_size) {
+    @content;
+  }
+}
+
+@mixin media_above($min) {
+  @media only screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin media_between($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max - 1) {
+    @content;
+  }
+}

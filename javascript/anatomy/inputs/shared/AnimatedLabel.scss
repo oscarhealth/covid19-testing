@@ -1,0 +1,53 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.label {
+  align-items: center;
+  display: flex;
+  max-width: 100%;
+  position: absolute;
+  transform-origin: left top;
+  transition: top $transition-normal $anatomy-field-easing-curve, transform $transition-normal $anatomy-field-easing-curve;
+}
+
+.label_transitionOpacity {
+  transition: top $transition-normal $anatomy-field-easing-curve, opacity $transition-normal $anatomy-field-easing-curve, transform $transition-normal $anatomy-field-easing-curve;
+}
+
+.label_theme-standard {
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+.label_theme-contained {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.label_isSubdued {
+  pointer-events: none;
+}
+
+.label_isSubdued.label_withHeader {
+  top: 0;
+
+  &.label_size-small {
+    transform: scale($anatomy-header-text-line-height / $anatomy-small-text-line-height);
+  }
+
+  &.label_size-medium {
+    transform: scale($anatomy-header-text-line-height / $anatomy-medium-text-line-height);
+  }
+}
+
+.label_isSubdued:not(.label_withHeader) {
+  opacity: 0;
+}
+
+.headerSection_size-small {
+  height: $anatomy-standard-small-header-height;
+}
+
+.headerSection_size-medium {
+  height: $anatomy-standard-medium-header-height;
+}

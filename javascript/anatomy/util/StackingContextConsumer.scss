@@ -1,0 +1,17 @@
+@import 'javascript/anatomy/style/constants';
+
+.zIndex {
+  position: absolute;
+}
+
+.zIndex_header-z {
+  z-index: $header-z + 1;
+}
+
+.zIndex_modal-z {
+  z-index: $modal-z + 1;
+}
+
+.zIndex_slideout-z {
+  z-index: $slideout-z + 1;
+}

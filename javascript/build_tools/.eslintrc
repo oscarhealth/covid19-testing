@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "local/prefer-es6-imports": 0,
+    "local/prefer-export": 0,
+    "local/use-curly-quotes": 0,
+  },
+}

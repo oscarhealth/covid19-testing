@@ -1,0 +1,18 @@
+@mixin high-contrast-mode {
+  /* stylelint-disable-next-line media-feature-name-no-unknown */
+  @media (forced-colors: active), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin high-contrast-border {
+  @include high-contrast-mode {
+    border: 1px solid WindowText;
+  }
+}
+
+@mixin high-contrast-outline {
+  @include high-contrast-mode {
+    outline: 1px solid WindowText;
+  }
+}

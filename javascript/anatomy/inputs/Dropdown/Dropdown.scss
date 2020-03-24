@@ -1,0 +1,62 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+$icon-size: 16px;
+
+.innerContainer {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+
+  &:hover {
+    color: $color-blue-black;
+  }
+}
+
+.innerContainer_disabled {
+  cursor: not-allowed;
+}
+
+.value {
+  overflow: hidden;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  transition: opacity $transition-normal $anatomy-field-easing-curve;
+  white-space: nowrap;
+}
+
+.value_hidden {
+  opacity: 0;
+}
+
+.visibleContent {
+  position: relative;
+  width: 100%;
+}
+
+.arrow {
+  pointer-events: none; // element.contains() was not recognizing the svg as being contained
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color $transition-normal $anatomy-field-easing-curve;
+}
+
+.arrow_theme-standard.arrow_withHeader {
+  top: initial;
+  transform: initial;
+
+  &.arrow_size-small {
+    bottom: ($anatomy-small-text-line-height - $icon-size) / 2;
+  }
+
+  &.arrow_size-medium {
+    bottom: ($anatomy-medium-text-line-height - $icon-size) / 2;
+  }
+}
+
+.outline {
+  height: 100%;
+  width: 100%;
+}

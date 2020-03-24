@@ -1,0 +1,42 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.innerContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.fieldContent {
+  cursor: text;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  &:hover .innerContent {
+    color: $color-blue-black;
+  }
+}
+
+.fieldContent_theme-contained {
+  justify-content: center;
+  padding: 0 $anatomy-contained-side-padding;
+}
+
+.labelContainer_size-medium,
+.labelContainer_size-small {
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 4px;
+}
+
+.labelContainer_size-medium {
+  height: 54px;
+}
+
+.labelContainer_size-small {
+  height: 42px;
+}

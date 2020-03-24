@@ -1,0 +1,6 @@
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon fill="#001837" transform="translate(16.000000, 15.510490) scale(1, -1) translate(-16.000000, -15.510490) " points="15 9.81916137 15 25.02098 17 25.02098 17 9.81916137 20.993 13.8039395 22.407 12.3932043 16 6 9.593 12.3932043 11.007 13.8039395"></polygon>
+        <polygon fill="#001837" points="20 12.041561 20 14.0369431 26 14.0369431 26 28.0046179 6 28.0046179 6 14.0369431 12 14.0369431 12 12.041561 4 12.041561 4 30 28 30 28 12.041561"></polygon>
+    </g>
+</svg>

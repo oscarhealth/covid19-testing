@@ -1,0 +1,55 @@
+@import 'javascript/anatomy/style/constants';
+@import 'layout';
+
+.typeahead_focused {
+  @include media-mobile {
+    background-color: white;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    padding: 4px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+  }
+}
+
+.addressIcon {
+  color: $color-text;
+  left: 13px;
+  position: absolute;
+  top: 22px;
+}
+
+.addressIconSmall {
+  color: $color-text;
+  left: 16px;
+  position: absolute;
+  top: 14px;
+}
+
+.typeahead_focused .addressIcon {
+  @include media-mobile {
+    left: 18px;
+    top: 70px;
+  }
+}
+.typeahead_focused .addressIconSmall {
+  color: $color-text;
+  left: 18px;
+  position: absolute;
+  top: 62px;
+}
+
+.mobileFullscreenLabel {
+  display: none;
+  text-align: left;
+  padding: 8px 0;
+}
+
+.typeahead_focused .mobileFullscreenLabel {
+  @include media-mobile {
+    display: block;
+  }
+}

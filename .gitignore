@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+.idea_modules
+.vscode
+.atom-build.*
+.npm_shrinkwrap_sha1_cache
+.sass-cache
+*.log
+*.iml
+node_modules/
+webpack-assets.json
+jsconfig.json
+.tx/
+dist/
+.python-version

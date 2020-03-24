@@ -1,0 +1,138 @@
+@import 'javascript/anatomy/style/constants';
+@import 'mixins';
+
+.serifTitle {
+  @include serif-typography-element;
+  color: $color-blue-black;
+  font-size: 48px;
+  font-weight: $font-weight-bold;
+  line-height: 58px;
+}
+
+.serifTitleSmall {
+  @include serif-typography-element;
+  color: $color-blue-black;
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  line-height: 40px;
+}
+
+.pageTitle {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 38px;
+  font-weight: $font-weight-bold;
+  line-height: 52px;
+}
+
+.title1 {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 28px;
+  font-weight: $font-weight-bold;
+  line-height: 40px;
+}
+
+.title2 {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+  line-height: 32px;
+}
+
+.title3 {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  line-height: 26px;
+}
+
+.title4 {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  line-height: 22px;
+}
+
+.intro {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 21px;
+  font-weight: $font-weight-bold;
+  line-height: 32px;
+}
+
+.primaryText {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 16px;
+  font-weight: $font-weight-normal;
+  line-height: 26px;
+  // stylelint-disable-next-line selector-no-type
+  strong {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.text {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 14px;
+  font-weight: $font-weight-normal;
+  line-height: 22px;
+  // stylelint-disable-next-line selector-no-type
+  strong {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.subText {
+  @include typography-element;
+  color: $color-text;
+  font-size: 12px;
+  font-weight: $font-weight-normal;
+  line-height: 20px;
+  // stylelint-disable-next-line selector-no-type
+  strong {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.secondaryTitle {
+  @include typography-element;
+  color: $color-blue-black;
+  font-size: 18px;
+  font-weight: $font-weight-normal;
+  line-height: 28px;
+}
+
+.color__blue-black {
+  color: $color-blue-black;
+}
+
+.color__light-blue {
+  color: $color-light-blue;
+}
+
+.color__dark-teal {
+  color: $color-dark-teal;
+}
+
+.color__dark-red {
+  color: $color-dark-red;
+}
+
+.color__dark-yellow {
+  color: $color-dark-yellow;
+}
+
+.color__text {
+  color: $color-text;
+}
+
+.color__text-light {
+  color: $color-text-light;
+}

@@ -1,0 +1,45 @@
+@import 'javascript/anatomy/style/constants';
+@import 'layout';
+@import 'fonts';
+@import 'responsive';
+
+.headerContainer {
+  background-color: #082644;
+  padding: 75px 35px;
+
+  @include sm_size {
+    padding: 35px;
+  }
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.title {
+  color: white;
+  margin-bottom: 28px;
+}
+
+.description {
+  color: white;
+  max-width: 640px;
+}
+
+.surveyContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 75px;
+
+  @include sm_size {
+    padding: 5px 35px 75px;
+  }
+}
+
+.surveyContent {
+  max-width: 1120px;
+}

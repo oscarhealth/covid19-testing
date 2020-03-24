@@ -1,0 +1,251 @@
+@import 'javascript/anatomy/style/constants';
+@import 'fonts';
+@import 'responsive';
+
+.text,
+.subText,
+.finePrint {
+  color: #082644;
+  font-family: $font-source-sans-pro;
+  font-weight: 400;
+  line-height: normal;
+
+  & strong {
+    font-weight: 600;
+  }
+}
+
+.text {
+  @include sm_size {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include md_size {
+    font-size: 21px;
+    line-height: 32px;
+  }
+}
+
+.subText {
+  @include sm_size {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include md_size {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.finePrint {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: #082644;
+  font-family: $font-source-sans-pro;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.h1 {
+  @include sm_size {
+    font-size: 48px;
+    line-height: 50px;
+  }
+  @include md_size {
+    font-size: 64px;
+    line-height: 64px;
+  }
+  @include lg_size {
+    font-size: 80px;
+    line-height: 80px;
+  }
+  @include xlg_size {
+    font-size: 90px;
+    line-height: 90px;
+  }
+}
+
+.h2 {
+  @include sm_size {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  @include md_size {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  @include lg_size {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  @include xlg_size {
+    font-size: 54px;
+    line-height: 60px;
+  }
+}
+
+.h3 {
+  @include sm_size {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  @include md_size {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  @include lg_size {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  @include xlg_size {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
+.h4 {
+  @include sm_size {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  @include md_size {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  @include lg_size {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  @include xlg_size {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+.h5 {
+  @include sm_size {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @include md_size {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @include lg_size {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  @include xlg_size {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+.surveyHeading1 {
+  font-family: $font-source-sans-pro;
+  letter-spacing: .15px;
+  color: #001837;
+  font-weight: 600;
+
+  @include sm_size {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  @include md_size {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  @include lg_size {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  @include xlg_size {
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
+.surveyHeading2 {
+  font-family: $font-source-sans-pro;
+  letter-spacing: .15px;
+  color: #001837;
+  font-weight: 400;
+
+  @include sm_size {
+    font-size: 22px;
+    line-height: 34px;
+  }
+  @include md_size {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  @include lg_size {
+    font-size: 26px;
+    line-height: 38px;
+  }
+  @include xlg_size {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+.surveyOptionsLabel {
+  font-family: $font-source-sans-pro;
+  letter-spacing: .15px;
+  color: #001837;
+  font-weight: 600;
+
+  @include sm_size {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  @include md_size {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  @include lg_size {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  @include xlg_size {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+.surveyHeading3 {
+  font-family: $font-source-sans-pro;
+  letter-spacing: .15px;
+  color: #001837;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.surveyHeading4 {
+  font-family: $font-source-sans-pro;
+  letter-spacing: .15px;
+  color: #001837;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.surveyHeading5 {
+  font-family: $font-source-sans-pro;
+  letter-spacing: .15px;
+  color: #001837;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}

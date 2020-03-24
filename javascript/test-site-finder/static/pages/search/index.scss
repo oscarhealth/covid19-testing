@@ -1,0 +1,36 @@
+@import 'javascript/anatomy/style/constants';
+@import 'layout';
+
+.container {
+  display: flex;
+  height: calc(100vh - 81px);
+
+  @include media-tablet {
+    height: calc(100vh - 61px);
+  }
+}
+
+.list {
+  border-right: 1px solid $color-border-gray-dark;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+
+  @include media-tablet {
+    width: 100%;
+  }
+}
+
+.listResults {
+  border-top: 1px solid $color-border-gray-dark;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.map {
+  flex: 1;
+
+  @include media-tablet {
+    display: none;
+  }
+}

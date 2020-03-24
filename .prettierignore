@@ -1,0 +1,7 @@
+**/dist
+**/flow-typed
+*.graphql
+*.html
+*.yml
+npm-shrinkwrap.json
+webpack-assets.json

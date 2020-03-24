@@ -1,0 +1,44 @@
+$anatomy-border-width: 1px;
+$anatomy-border-radius: 3px;
+$anatomy-field-padding: 4px;
+$anatomy-field-easing-curve: cubic-bezier(.7, 0, .3, 1);
+$anatomy-small-font-size: 14px;
+$anatomy-medium-font-size: 16px;
+$anatomy-field-min-width: 100px;
+
+$anatomy-small-field-padding: $anatomy-field-padding;
+$anatomy-medium-field-padding: $anatomy-field-padding * 2;
+$anatomy-header-text-line-height: 20px;
+$anatomy-small-text-line-height: 22px;
+$anatomy-medium-text-line-height: 26px;
+
+$anatomy-contained-side-padding: $anatomy-field-padding * 4 - $anatomy-border-width;
+
+$anatomy-standard-small-header-height: $anatomy-header-text-line-height + $anatomy-small-field-padding;
+$anatomy-standard-medium-header-height: $anatomy-header-text-line-height + $anatomy-medium-field-padding;
+
+// The total padding needed to reserve enough space for the subdued header
+$anatomy-contained-small-top-padding: $anatomy-standard-small-header-height + $anatomy-small-field-padding;
+$anatomy-contained-medium-top-padding: $anatomy-standard-medium-header-height + $anatomy-medium-field-padding;
+
+// The padding above the raw text input when not using headers
+$anatomy-contained-small-headerless-padding: ($anatomy-small-field-padding * 3 + $anatomy-header-text-line-height) / 2;
+$anatomy-contained-medium-headerless-padding: ($anatomy-medium-field-padding * 3 + $anatomy-header-text-line-height)
+  / 2;
+
+/**
+ * Item heights
+ */
+
+$anatomy-standard-small-item-height: $anatomy-small-text-line-height + $anatomy-small-field-padding;
+$anatomy-standard-small-item-with-header-height: $anatomy-standard-small-item-height +
+  $anatomy-standard-small-header-height;
+
+$anatomy-standard-medium-item-height: $anatomy-medium-text-line-height + $anatomy-medium-field-padding;
+$anatomy-standard-medium-item-with-header-height: $anatomy-standard-medium-item-height +
+  $anatomy-standard-medium-header-height;
+
+$anatomy-contained-small-item-height: $anatomy-small-text-line-height + $anatomy-standard-small-header-height +
+  $anatomy-small-field-padding * 2 - 10;
+$anatomy-contained-medium-item-height: $anatomy-medium-text-line-height + $anatomy-standard-medium-header-height +
+  $anatomy-medium-field-padding * 2;

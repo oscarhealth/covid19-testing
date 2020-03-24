@@ -1,0 +1,52 @@
+@import 'javascript/anatomy/style/constants';
+
+@keyframes spinning-loader {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+$arc-width: .33em;
+$size: 1em + 2 * $arc-width;
+
+.loader {
+  animation: spinning-loader infinite 500ms;
+  animation-timing-function: linear;
+  border: $arc-width solid;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: $size;
+  opacity: .8;
+  vertical-align: middle;
+  width: $size;
+}
+
+.centerWrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.overlayWrapper {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  background-color: rgba($color-white, .6);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

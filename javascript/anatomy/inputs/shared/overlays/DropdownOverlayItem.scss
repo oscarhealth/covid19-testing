@@ -1,0 +1,47 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.item {
+  align-items: center;
+  color: $color-blue-black;
+  display: flex;
+  padding: $anatomy-field-padding * 3 $anatomy-field-padding * 4 $anatomy-field-padding * 3 $anatomy-field-padding * 10;
+}
+
+.item_highlighted {
+  background-color: rgba($color-blue-black, 0.03);
+}
+
+.item_selected {
+  padding: $anatomy-field-padding * 3 $anatomy-field-padding * 4;
+}
+
+.item_size-small {
+  font-size: $anatomy-small-font-size;
+  line-height: $anatomy-small-text-line-height;
+}
+
+.item_size-medium {
+  font-size: $anatomy-medium-font-size;
+  line-height: $anatomy-medium-text-line-height;
+}
+
+.checkmark {
+  color: $color-light-blue;
+  margin-right: $anatomy-field-padding * 2;
+}
+
+.unselectable {
+  // shrink the focus outline to better match container
+  outline-offset: -3px;
+  user-select: none;
+}
+
+// Hide the focus outline when interacting with the mouse.
+:global(.js-focus-visible) .unselectable:not([data-focus-visible-added]):focus {
+  outline: none;
+}
+
+.substringMatchedItem_highlight {
+  font-weight: $font-weight-semi-bold;
+}

@@ -1,0 +1,159 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/typography/core/mixins';
+
+$checkbox-size: 20px;
+$small-line-height: 22px;
+$medium-line-height: 26px;
+
+.label {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.checkboxInput {
+  appearance: none;
+  outline: none;
+  position: absolute;
+  transform: translate(5px, 5px);
+}
+
+input[type=checkbox].checkboxInput {
+  border: none;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+.checkbox {
+  align-items: top;
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+}
+
+.control_size-medium.control {
+  margin-top: ($medium-line-height - $checkbox-size)/2;
+}
+
+.label_size-medium .labelText {
+  line-height: $medium-line-height;
+}
+
+// Checkbox
+.control {
+  background-color: $color-white;
+  border: 1px solid $color-text-light;
+  border-radius: $standard-border-radius;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: $checkbox-size;
+  margin-top: ($small-line-height - $checkbox-size)/2;
+  position: relative;
+  transition: background-color $transition-quick $ease-sine-in-out, border-color $transition-quick $ease-sine-in-out;
+  width: $checkbox-size;
+}
+
+// Border for :focus state
+.control::before {
+  border: 1px solid transparent;
+  border-radius: $standard-border-radius - 2px;
+  bottom: 1px;
+  content: '';
+  left: 1px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  transition: border-color $transition-quick $ease-sine-in-out;
+}
+
+.checkboxInput:checked + .control::before {
+  border-radius: $standard-border-radius - 1px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+// Check
+.control::after {
+  background: url('./Checkbox.svg') no-repeat center center;
+  background-size: 12px;
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0);
+  transition: opacity $transition-quick $ease-sine-in-out, transform $transition-normal $ease-sine-in-out;
+}
+
+// Unchecked state
+.checkboxInput:focus + .control::before,
+.checkboxInput:active + .control::before {
+  border-color: $color-text-light;
+}
+
+.checkboxInput:active + .control {
+  background-color: $color-border-gray;
+}
+
+// Checked state
+.checkboxInput:checked + .control {
+  background-color: $color-light-blue;
+  border-color: $color-light-blue;
+}
+
+.checkboxInput:checked:focus + .control::before,
+.checkboxInput:checked:active + .control::before {
+  border-color: $color-white;
+}
+
+.checkboxInput:checked + .control::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+// Error state
+.checkboxInput:checked + .control_hasErrors {
+  background-color: $color-red;
+}
+
+.checkboxInput:focus + .control_hasErrors::before,
+.checkboxInput:active + .control_hasErrors::before {
+  border-color: $color-red;
+}
+
+// Disabled state
+.checkboxInput + .control.control_disabled {
+  background-color: $color-border-gray;
+  border-color: $color-border-gray-dark;
+  cursor: not-allowed;
+}
+
+.checkboxInput:active + .control_disabled::before,
+.checkboxInput:checked:active + .control_disabled::before {
+  border-color: transparent;
+}
+
+.checkboxInput:checked + .control_disabled::after {
+  background: url('./Checkbox.disabled.svg') no-repeat center center;
+}
+
+.label_disabled {
+  cursor: not-allowed;
+
+  & .labelText {
+    color: $color-text-light;
+  }
+}
+
+// Left last for CSS specificty
+.checkboxInput + .control.control_hasErrors {
+  border-color: $color-red;
+}
+
+.checkboxInput:hover + .control:not(.control_disabled) {
+  border-color: $color-blue-black;
+}

@@ -1,0 +1,138 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/typography/core/mixins';
+
+$radio-button-size: 20px;
+$radio-button-dot-size: 12px;
+$small-line-height: 22px;
+$medium-line-height: 26px;
+
+.label {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.radioButtonInput {
+  appearance: none;
+  left: -9999px;
+  outline: none;
+  position: absolute;
+}
+
+.radioButton {
+  align-items: top;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.control_size-medium.control {
+  margin-top: ($medium-line-height - $radio-button-size)/2;
+}
+
+.label_size-medium .labelText {
+  line-height: $medium-line-height;
+}
+
+// Radio button
+.control {
+  background-color: $color-white;
+  border: 1px solid $color-text-light;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: $radio-button-size;
+  margin-top: ($small-line-height - $radio-button-size)/2;
+  position: relative;
+  transition: background-color $transition-quick $ease-sine-in-out, border-color $transition-quick $ease-sine-in-out;
+  width: $radio-button-size;
+}
+
+// Radio button dot
+.control::after {
+  background-color: $color-light-blue;
+  border-radius: 50%;
+  bottom: 0;
+  content: '';
+  height: $radio-button-dot-size;
+  left: 0;
+  margin: auto;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0);
+  transition: opacity $transition-quick $ease-sine-in-out, transform $transition-quick $ease-sine-in-out;
+  width: $radio-button-dot-size;
+}
+
+// Unchecked state
+.radioButtonInput:active + .control {
+  background-color: $color-border-gray;
+}
+
+// Checked state
+.radioButtonInput:checked + .control {
+  border-color: $color-light-blue;
+}
+
+.radioButtonInput:checked + .control::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+// Errored state
+.radioButtonInput:checked + .control_hasErrors {
+  border-color: $color-red;
+}
+
+.control_hasErrors::after {
+  background-color: $color-red;
+}
+
+// Disabled state
+.radioButtonInput + .control.control_disabled {
+  background-color: $color-border-gray;
+  border-color: $color-border-gray-dark;
+  cursor: not-allowed;
+}
+
+.radioButtonInput:checked + .control_disabled::after {
+  background-color: $color-text-light;
+}
+
+.label_disabled {
+  cursor: not-allowed;
+
+  & .labelText {
+    color: $color-text-light;
+  }
+}
+
+// Left last for CSS specificty
+.radioButtonInput + .control.control_hasErrors {
+  border-color: $color-red;
+}
+
+.radioButtonInput:hover + .control:not(.control_disabled),
+.radioButtonInput:focus + .control:not(.control_disabled) {
+  border-color: $color-blue-black;
+}
+
+// Rows and columns
+.radioGroup {
+  display: flex;
+  flex-direction: row;
+}
+
+.radioGroup_column {
+  flex-direction: column;
+}
+
+.radioGroupItem + .radioGroupItem {
+  margin-left: 24px;
+}
+
+.radioGroup_column .radioGroupItem + .radioGroupItem {
+  margin-left: 0;
+  margin-top: 12px;
+}

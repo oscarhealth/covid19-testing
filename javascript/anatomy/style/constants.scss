@@ -1,0 +1,124 @@
+// depends on: []
+// Above "depends on" line should be removed once _web-shared-constants.scss no longer depends on this file.
+
+// Welcome!
+//
+// This file should contain all/most of the SCSS constants you need to style your page.
+//
+// If you find yourself needing something outside of this file / Anatomy, please
+// consult your friendly neighborhood designer.
+
+/* stylelint-disable color-no-hex */
+
+// Fonts
+$font-source-sans-pro: 'Source Sans Pro', sans-serif;
+
+// Font weights
+$font-weight-normal: 400;
+
+// All the below font-weights are not standard values. They were changed to expediently refactor the font
+// weights of the app. (Semi-bold is normally defined as 600, bold as 700, extra-bold as 800).
+// TODO (clayton) Fix these values if we don't refactor font weights soon
+$font-weight-semi-bold: 500;
+$font-weight-bold: 600;
+
+// Primary colors
+// $color-light-blue: #003bde;
+// $color-blue: #002177;
+$color-light-blue: #347A8F;
+$color-blue: #224F5D;
+$color-red: #d50000;
+$color-pink: #ff8f91;
+$color-teal: #26cfa2;
+$color-yellow: #fcb137;
+
+// Soft colors
+$color-soft-blue: #e2e9ff;
+$color-soft-red: #ffe3df;
+$color-soft-teal: #cffbf0;
+$color-soft-yellow: #ffe9b4;
+
+// Dark colors
+$color-dark-red: #aa0000;
+$color-dark-teal: #0d7559;
+$color-dark-yellow: #915f0e;
+
+// Gray colors
+$color-blue-black: #001837;
+$color-border-gray: #efefef;
+$color-border-gray-dark: #dee1e5;
+$color-gray-background-cool: #f9f9f9;
+$color-gray-background-warm: #fbfaf9;
+$color-text-light: #99a8bb;
+$color-text-medium: #7b8a9d;
+$color-text: #5c6b7e;
+
+// Utility colors
+$color-black: #000;
+$color-white: #fff;
+$color-transparent: rgba($color-white, 0); // fixes coloring issue in gradient
+
+// Shadows
+$color-lightest-shadow: rgba($color-blue-black, 0.1);
+$color-light-shadow: rgba($color-blue-black, 0.2);
+$color-normal-shadow: rgba($color-blue-black, 0.3);
+
+// Disabled opacity
+$disabled-opacity: 0.4;
+
+// Z-indexes
+$base-z: 1;
+$popout-z: 2;
+$header-z: 100;
+$slideout-z: 900;
+$modal-z: 1000;
+$toast-z: 1100;
+
+// Sizes
+// Breakpoints
+$breakpoint-mobile-inclusive: 480px;
+$breakpoint-tablet-portrait-inclusive: 768px;
+$breakpoint-small-inclusive: 1024px;
+
+// Anatomy header
+$header-banner-height: 40px;
+$header-height: 60px;
+$subheader-height: 55px;
+
+// Layout sizes
+$slideout-h-padding: 30px;
+$standard-border-radius: 4px;
+$standard-buffer: 20px;
+$standard-max-width: 960px;
+$standard-min-height: 600px;
+$footer-height: 60px;
+
+// Box shadows
+$standard-box-shadow-color: rgba($color-blue-black, 0.06);
+$standard-box-shadow: 4px 4px 6px 0 $standard-box-shadow-color;
+// Used for persistent header and the like.
+$standard-header-box-shadow: 0 1px 4px $standard-box-shadow-color;
+
+// Transition times
+$transition-no-time: 0ms;
+$transition-quick: 100ms;
+$transition-normal: 200ms;
+$transition-slow: 400ms;
+
+// Easing functions
+// Ease-out transition, used when something arrives in front of the user - starts fast / ends slow
+$ease-arrival: cubic-bezier(0.215, 0.61, 0.355, 1);
+// Ease-in transition, used when something departs from the user's focus - starts slow / ends fast
+$ease-departure: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+// for sinusoidal movement
+$ease-sine-in-out: cubic-bezier(0.4, 0.1, 0.6, 0.9);
+// for general transitions
+$ease-in-ease-out: cubic-bezier(0.7, 0, 0.3, 1);
+
+// Anatomy Popover
+$anatomy-popover-max-width: 300px;
+// Anatomy Box Shadows
+$anatomy-box-shadow-extra-small: 0 1px 2px $color-normal-shadow;
+$anatomy-box-shadow-small: 0 3px 5px $color-light-shadow;
+$anatomy-box-shadow-medium: 0 8px 16px $color-lightest-shadow;
+$anatomy-box-shadow-large: 0 20px 35px $color-lightest-shadow;

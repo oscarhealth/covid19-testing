@@ -1,0 +1,134 @@
+@import 'layout';
+@import 'javascript/anatomy/style/constants';
+@import 'responsive';
+
+.container {
+  margin: 0 auto 30px;
+  max-width: 1070px;
+}
+
+.taskBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 24px 40px 24px;
+}
+
+.backContainer {
+  vertical-align: middle;
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.textLink {
+  color: #005EAA;
+  font-weight: $font-weight-bold;
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action {
+  display: flex;
+  cursor: pointer;
+}
+
+.icon {
+  color: #005EAA;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.divider {
+  border-top: 3px solid #C61F0A;
+  margin: 64px 24px 0;
+  max-width: 60px;
+}
+
+.header {
+  margin: 30px 24px 0;
+  max-width: 624px;
+}
+
+.claimedTime {
+  margin: 40px 24px;
+}
+
+.facility {
+  display: flex;
+  flex-direction: column;
+  margin: 0 24px;
+}
+
+.info {
+  margin: 24px 24px 0;
+  font-size: 21px;
+  font-family: 'Source Sans Pro';
+  line-height: 32px;
+
+  @include media-tablet {
+    font-size: 18px;
+  }
+
+  ul > li {
+    list-style: disc;
+    list-style-position: outside;
+    padding: 21px 0 0 0;
+
+    &:first-child {
+      padding: 10px 0 0 0;
+    }
+  }
+
+  ul {
+    padding: 10px 0;
+    margin: 0 0 0 25px;
+  }
+
+  ol > li {
+    padding: 21px 0 0 0;
+
+    &:first-child {
+      padding: 10px 0 0 0;
+    }
+  }
+}
+
+.infoHeader {
+  padding-bottom: 25px;
+}
+
+.listHeader {
+  font-weight: 600;
+
+  @include media-tablet {
+    font-size: 20px;
+  }
+}
+
+.stepsHeader {
+  padding-bottom: 24px;
+}
+
+.sub {
+  padding: 12px 0 0;
+  display: block;
+  font-size: 21px;
+  font-weight: 600;
+
+  @include media-tablet {
+    font-size: 18px;
+  }
+}
+
+.description {
+  padding: 12px 0 0;
+  display: block;
+  font-size: 21px;
+
+  @include media-tablet {
+    font-size: 18px;
+  }
+}

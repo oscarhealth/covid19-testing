@@ -1,0 +1,21 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.flag,
+.error {
+  font-size: 11px;
+  line-height: 16px;
+  margin-top: $anatomy-field-padding;
+}
+
+.flag {
+  color: $color-text;
+}
+
+.error {
+  color: $color-red;
+}
+
+.field {
+  width: 100%;
+}

@@ -1,0 +1,11 @@
+@import 'javascript/anatomy/style/constants';
+
+@mixin typography-element {
+  font-family: $font-source-sans-pro;
+  letter-spacing: .15px;
+}
+
+@mixin serif-typography-element {
+  font-family: $font-source-sans-pro;
+  letter-spacing: -.5px;
+}

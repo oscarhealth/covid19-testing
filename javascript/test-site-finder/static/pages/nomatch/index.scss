@@ -1,0 +1,25 @@
+@import 'layout';
+@import 'javascript/anatomy/style/constants';
+
+.container {
+  margin: 0 auto 30px;
+  max-width: 1070px;
+}
+
+.divider {
+  border-top: 3px solid #c61f0a;
+  margin: 64px 24px 0;
+  max-width: 60px;
+}
+
+.header {
+  margin: 30px 24px 0;
+  max-width: 624px;
+}
+
+.info {
+  margin: 24px 24px 0;
+  font-size: 21px;
+  font-family: 'Source Sans Pro';
+  line-height: 32px;
+}

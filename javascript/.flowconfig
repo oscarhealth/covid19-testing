@@ -1,0 +1,22 @@
+[ignore]
+.*/webpack-assets\.json
+
+[include]
+../flow
+
+[libs]
+../flow/flow-typed
+
+[options]
+esproposal.optional_chaining=enable
+
+module.name_mapper='^javascript' -> '<PROJECT_ROOT>'
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/../flow/stub/object'
+
+[lints]
+sketchy-number=error
+unnecessary-optional-chain=error
+untyped-type-import=error
+
+[version]
+0.104.0

@@ -1,0 +1,105 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.overlay {
+  background-color: $color-gray-background-warm;
+  border: $anatomy-border-width solid $color-border-gray-dark;
+  border-radius: $anatomy-border-radius $anatomy-border-radius 0 0;
+  box-shadow: $anatomy-box-shadow-medium;
+  box-sizing: border-box;
+  position: absolute;
+  transition: background-color $transition-normal $anatomy-field-easing-curve,
+              opacity $transition-normal $anatomy-field-easing-curve;
+}
+
+.overlay_inverted {
+  border-radius: 0 0 $anatomy-border-radius $anatomy-border-radius;
+}
+
+.overlay_hidden {
+  opacity: 0;
+}
+
+.overlay_size-small {
+  height: $anatomy-contained-small-item-height;
+}
+
+.overlay_size-medium {
+  height: $anatomy-contained-medium-item-height;
+}
+
+// For standard themes, we need to emulate a closed theme box that sits on top and centers the visible content
+// inside it.  The easiest mathematical way to do this is to specify the height and then extend the top by an
+// amount equivalent to how much padding there would be in a real closed text input.
+.overlay_theme-standard {
+  left: -($anatomy-contained-side-padding);
+  right: -($anatomy-contained-side-padding);
+
+  // With no header, pad the top with the corresponding padding above the raw input from the contained theme
+  &.overlay_size-small {
+    top: -($anatomy-contained-small-headerless-padding);
+  }
+
+  &.overlay_size-medium {
+    top: -($anatomy-contained-medium-headerless-padding);
+  }
+
+  // With a header, pad the top with the corresponding padding above the header from the contained theme
+  &.overlay_size-small.overlay_withHeader {
+    top: -($anatomy-small-field-padding);
+  }
+
+  &.overlay_size-medium.overlay_withHeader {
+    top: -($anatomy-medium-field-padding);
+  }
+}
+
+// For contained themes, we can simply render a box on top of the existing one, since it is already positioned
+// correctly.
+.overlay_theme-contained {
+  bottom: -$anatomy-border-width;
+  left: -$anatomy-border-width;
+  right: -$anatomy-border-width;
+  top: -$anatomy-border-width;
+}
+
+.overlayContainer {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &:hover .overlay {
+    background-color: $color-border-gray;
+  }
+}
+
+.overlayContainer_theme-standard {
+  align-items: flex-start;
+}
+
+.overlayContainer_theme-contained {
+  align-items: center;
+  padding: 0 15px;
+}
+
+// When inverted, ensure the header covers the box shadow of the dropdown content (which renders directly above).
+.overlayContainer_inverted {
+  z-index: $base-z + 1;
+}
+
+.leftChild {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.rightChild {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.middleChild {
+  border-radius: 0;
+}

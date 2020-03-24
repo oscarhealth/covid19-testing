@@ -1,0 +1,34 @@
+@import 'javascript/anatomy/style/constants';
+@import 'responsive';
+
+.questionField {
+  padding: 20px 0 10px;
+}
+
+.textField {
+  padding: 40px 0 10px;
+  margin: 0 0 -20px;
+}
+
+.fieldLabel {
+  @include sm_size {
+    padding-bottom: 6px;
+  }
+  @include md_size {
+    padding-bottom: 10px;
+  }
+  @include lg_size {
+    padding-bottom: 14px;
+  }
+  @include xlg_size {
+    padding-bottom: 18px;
+  }
+}
+
+.submit {
+  padding: 24px 0;
+}
+
+hr {
+  margin: 16px 0 16px;
+}

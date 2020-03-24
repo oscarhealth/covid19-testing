@@ -1,0 +1,63 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.item {
+  background-color: transparent;
+  border: 0;
+  border-bottom: $anatomy-border-width solid $color-border-gray-dark;
+  box-sizing: border-box;
+  display: flex;
+  min-width: $anatomy-field-min-width;
+  position: relative;
+  transition: border-color $transition-normal $anatomy-field-easing-curve;
+  width: 100%;
+
+  &:hover {
+    border-color: $color-text-light;
+  }
+
+  &.item_isFocused {
+    border-color: $color-blue-black;
+  }
+
+  &.item_disabled {
+    border-bottom: $anatomy-border-width dashed $color-text-light;
+    cursor: not-allowed;
+  }
+
+  &.item_hasErrors {
+    border-color: $color-red;
+  }
+}
+
+.item_size-small {
+  min-height: $anatomy-standard-small-item-height;
+
+  &.item_withHeader {
+    min-height: $anatomy-standard-small-item-with-header-height;
+  }
+}
+
+.item_size-small.item_fixedHeight {
+  height: $anatomy-standard-small-item-height;
+
+  &.item_withHeader {
+    height: $anatomy-standard-small-item-with-header-height;
+  }
+}
+
+.item_size-medium.item_fixedHeight {
+  height: $anatomy-standard-medium-item-height;
+
+  &.item_withHeader {
+    height: $anatomy-standard-medium-item-with-header-height;
+  }
+}
+
+.item_size-medium {
+  min-height: $anatomy-standard-medium-item-height;
+
+  &.item_withHeader {
+    min-height: $anatomy-standard-medium-item-with-header-height;
+  }
+}

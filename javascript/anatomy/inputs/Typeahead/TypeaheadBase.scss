@@ -1,0 +1,50 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.innerContainer {
+  cursor: pointer;
+
+  &:hover {
+    color: $color-blue-black;
+  }
+}
+
+.innerContainer_disabled {
+  cursor: not-allowed;
+}
+
+.innerContainer_focused {
+  cursor: text;
+}
+
+.textInput {
+  display: flex;
+  position: relative;
+  transition: opacity $transition-normal $anatomy-field-easing-curve;
+}
+
+.textInput_hidden {
+  opacity: 0;
+}
+
+.value {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-overflow: ellipsis;
+  transition: opacity $transition-normal $anatomy-field-easing-curve;
+  white-space: nowrap;
+}
+
+.value_hidden {
+  opacity: 0;
+}
+
+.visibleContent {
+  position: relative;
+  width: 100%;
+  margin-left: 28px;
+}

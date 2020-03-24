@@ -1,0 +1,12 @@
+@import 'javascript/anatomy/style/constants';
+
+.inputRow {
+  margin: 2px 0;
+  padding: 10px 0;
+  transition: background-color $transition-normal $ease-sine-in-out;
+  width: 100%;
+}
+
+.inputRow:hover {
+  background-color: rgba($color-light-blue, 0.05);
+}

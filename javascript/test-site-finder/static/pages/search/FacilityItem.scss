@@ -1,0 +1,158 @@
+@import 'javascript/anatomy/style/constants';
+@import 'layout';
+
+$avatar-margin-right: 16px;
+
+.container {
+  display: block;
+  position: relative;
+
+  &::after,
+  &::before {
+    border-top: 1px solid $color-border-gray-dark;
+    content: '';
+    left: 24px;
+    position: absolute;
+    right: 24px;
+  }
+
+  &::before {
+    top: -1px;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &:first-child::before {
+    border: 0;
+  }
+
+  &:last-child::after {
+    border: 0;
+  }
+
+  &:hover {
+    background-color: $color-gray-background-cool;
+
+    &::after,
+    &::before {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.highlight {
+  background-color: $color-gray-background-cool;
+
+  &::after,
+  &::before {
+    left: 0;
+    right: 0;
+  }
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 24px;
+  padding: 24px 0;
+}
+
+.row {
+  display: flex;
+}
+
+.row + .row {
+  margin-top: 4px;
+}
+
+.distance {
+  flex: 1;
+  text-align: right;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.metadata {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.hoursOfOperation {
+  margin: 4px 0 16px;
+}
+
+.availabilityTitle {
+  font-weight: $font-weight-bold;
+  margin-bottom: 12px;
+}
+
+.timeSlotsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.slotButton {
+  display: flex;
+  align-items: center;
+  border: transparent;
+  margin: 0 16px 16px 0;
+  padding: 0 12px;
+}
+
+.slotTime {
+  color: $color-white;
+  font-weight: $font-weight-bold;
+}
+
+.flex {
+  display: flex;
+}
+
+.toggleButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.toggleMargin {
+  margin-right: 4px;
+}
+
+.toggleText {
+  color: #4D5D73;
+  font-weight: 200;
+}
+
+.icon {
+  margin-top: 6px;
+}
+
+.hourHeader {
+  font-weight: $font-weight-bold;
+  width: 56px;
+}
+
+.arrow {
+  align-self: flex-end;
+  margin-left: 8px;
+
+  @include media-mobile {
+    align-self: flex-start;
+  }
+}
+
+.recommended {
+  margin: 6px 0;
+}

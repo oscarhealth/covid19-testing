@@ -1,0 +1,16 @@
+@import 'javascript/anatomy/style/constants';
+
+.anatomyStyles {
+  color: $color-text;
+  font-family: $font-source-sans-pro;
+  font-weight: $font-weight-normal;
+  letter-spacing: 0.15px;
+
+  /* stylelint-disable selector-no-type */
+  input {
+    cursor: inherit;
+    font-family: inherit;
+    letter-spacing: inherit;
+  }
+  /* stylelint-enable selector-no-type */
+}

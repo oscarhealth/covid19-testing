@@ -1,0 +1,10 @@
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.attachmentContainer {
+  bottom: 0;
+  display: flex;
+  left: -$anatomy-border-width;
+  position: absolute;
+  right: -$anatomy-border-width;
+  top: 0;
+}

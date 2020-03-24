@@ -1,0 +1,52 @@
+@import 'javascript/anatomy/style/constants';
+
+$pin-height: 40px;
+$pin-width: 27px;
+
+$pin-z: 1;
+$pin-highlighted-z: 2;
+$pin-tooltip-z: 3;
+
+$pin-transition-time: $transition-normal;
+$tooltip-vertical-padding: 10px;
+$tooltip-line-height: 14px;
+// 3px represents the distance we want between the top of the pin and the bottom of the tooltip.
+$pin-tooltip-top: -($pin-height + $tooltip-vertical-padding * 2 + $tooltip-line-height +
+      3px);
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: $pin-tooltip-top + 10px;
+  }
+
+  100% {
+    opacity: 1;
+    top: $pin-tooltip-top;
+    transform: translateX(-50%);
+  }
+}
+
+.tooltip {
+  animation: fadeIn $pin-transition-time ease-in;
+  background-color: $color-white;
+  border-radius: $standard-border-radius;
+  box-shadow: 0 2px 4px 0 rgba($color-blue-black, 0.12);
+  color: $color-blue-black;
+  cursor: pointer;
+  font-family: $font-source-sans-pro;
+  font-size: 14px;
+  height: auto;
+  letter-spacing: 0.15px;
+  line-height: $tooltip-line-height;
+  overflow: visible;
+  padding: $tooltip-vertical-padding 15px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: $pin-tooltip-top;
+  user-select: none;
+  white-space: nowrap;
+  width: auto;
+  z-index: $pin-tooltip-z;
+}

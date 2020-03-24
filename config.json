@@ -1,0 +1,16 @@
+{
+    "deploy": {
+        "development": [
+            "web-testing-site-finder-development-origin-us-east-1",
+            "web-testing-site-finder-development-origin-us-west-2"
+        ],
+        "staging": [
+            "web-testing-site-finder-staging-origin-us-east-1",
+            "web-testing-site-finder-staging-origin-us-west-2"
+        ],
+        "production": [
+            "web-testing-site-finder-production-origin-us-east-1",
+            "web-testing-site-finder-production-origin-us-west-2"
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+@import 'layout';
+
+.banner {
+  align-items: flex-start;
+  background-color: #fcedba;
+  display: flex;
+  padding: 12px 24px;
+}
+
+.bannerText {
+  @include media-tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

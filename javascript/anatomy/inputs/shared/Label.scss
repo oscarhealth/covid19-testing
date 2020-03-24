@@ -1,0 +1,42 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.label {
+  cursor: text;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color $transition-normal $anatomy-field-easing-curve;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.label_focused {
+  color: $color-blue-black;
+}
+
+.label_pointerCursor {
+  cursor: pointer;
+}
+
+.label_disabled {
+  color: $color-text-light;
+  cursor: not-allowed;
+}
+
+.label_hasErrors {
+  color: $color-red;
+}
+
+.label_size-small {
+  font-size: $anatomy-small-font-size;
+  height: $anatomy-small-text-line-height;
+  line-height: $anatomy-small-text-line-height;
+}
+
+.label_size-medium {
+  font-size: $anatomy-medium-font-size;
+  height: $anatomy-medium-text-line-height;
+  line-height: $anatomy-medium-text-line-height;
+}

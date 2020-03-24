@@ -1,0 +1,3 @@
+facility_id,display,is_federal,slot_count,facility_name,facility_display_note,address,city,state,zip,sunday_start,sunday_end,monday_start,monday_end,tuesday_start,tuesday_end,wednesday_start,wednesday_end,thursday_start,thursday_end,friday_start
+facility_01,1,0,2,First Facility Name,Call for requirements - this site is 65 and over only,555 Main St,Northlake,IL,60164,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,
+facility_02,1,1,2,Another Facility Name,,333 Washington Road,Batavia,IL,60510,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,8:00,20:00,

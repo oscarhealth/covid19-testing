@@ -1,0 +1,49 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.input {
+  background-color: transparent;
+  border: 0;
+  color: $color-blue-black;
+  padding: 0;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Remove input type=date mask elements when not focused and has only an inline label.
+  &:not(.input_isFocused)[type='date'][value=''] {
+    color: transparent;
+  }
+
+  // Webkit date-picker specific styling
+  &[type=date] {
+    // Prevents the controls from wrapping all the way right on long inputs.
+    &::-webkit-datetime-edit {
+      max-width: 150px;
+    }
+    // Removes the spin button
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+}
+
+.input_disabled {
+  color: $color-text-light;
+}
+
+.input_hasErrors {
+  color: $color-red;
+}
+
+.input.input_size-small {
+  font-size: $anatomy-small-font-size;
+  line-height: $anatomy-small-text-line-height;
+}
+
+.input.input_size-medium {
+  font-size: $anatomy-medium-font-size;
+  line-height: $anatomy-medium-text-line-height;
+}

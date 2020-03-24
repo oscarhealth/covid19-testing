@@ -1,0 +1,29 @@
+/* stylelint-disable at-rule-no-unknown */
+$layout-breakpoint-max: 1120px;
+$layout-breakpoint-desktop: 976px;
+$layout-breakpoint-tablet: 768px;
+$layout-breakpoint-mobile: 480px;
+
+@mixin media-max {
+  @media only screen and (max-width: $layout-breakpoint-max) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media only screen and (max-width: $layout-breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media only screen and (max-width: $layout-breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media only screen and (max-width: $layout-breakpoint-mobile) {
+    @content;
+  }
+}

@@ -1,0 +1,98 @@
+@import 'layout';
+@import 'responsive';
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroContainer {
+  background-color: #082644;
+  padding-bottom: 256px;
+
+  @include media-tablet {
+    padding-bottom: 128px;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 75px 24px 0;
+
+  @include media-tablet {
+    padding-top: 35px;
+  }
+}
+
+.title {
+  color: white;
+  margin-bottom: 28px;
+}
+
+.addressWrapper {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  margin: -190px auto 0;
+  max-width: 1120px;
+  padding: 0 24px;
+  width: 100%;
+
+  @include media-tablet {
+    margin-top: -94px;
+  }
+}
+
+.addressContainer {
+  align-items: center;
+  background: white;
+  border-top: 5px solid #88c3ea;
+  box-shadow: 0 30px 90px rgba(31, 36, 48, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 48px 36px;
+  position: relative;
+  text-align: center;
+
+  @include sm_size {
+    padding: 36px 20px;
+  }
+}
+
+.addressTitle {
+  margin-bottom: 24px;
+}
+
+.addressSubtitle {
+  margin-bottom: 40px;
+  max-width: 720px;
+}
+
+.addressInput {
+  max-width: 400px;
+  width: 100%;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraph + .paragraph {
+  margin-top: 24px;
+}
+
+// handle button on mobile better
+.button {
+  width: 132px;
+  height: auto;
+  line-height: 25px;
+  padding: 14px 18px;
+}
+
+.button + .button {
+  margin-left: 16px;
+}

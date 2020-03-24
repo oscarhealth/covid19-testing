@@ -1,0 +1,30 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.innerContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.fieldContent {
+  cursor: text;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  &:hover .innerContent {
+    color: $color-blue-black;
+  }
+}
+
+.fieldContent_disabled,
+.fieldContent_disabled:hover {
+  cursor: not-allowed;
+}
+
+.fieldContent_theme-contained {
+  justify-content: center;
+  padding: 0 $anatomy-contained-side-padding;
+}

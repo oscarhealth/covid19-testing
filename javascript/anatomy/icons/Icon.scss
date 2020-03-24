@@ -1,0 +1,35 @@
+/* stylelint-disable selector-no-type */
+
+.iconWrapper {
+  display: block;
+  line-height: 1;
+}
+
+.iconWrapper_extraSmall {
+  font-size: 8px;
+}
+
+.iconWrapper_small {
+  font-size: 16px;
+}
+
+.iconWrapper_medium {
+  font-size: 24px;
+}
+
+.iconWrapper_large {
+  font-size: 32px;
+}
+
+.iconWrapper_extraLarge {
+  font-size: 64px;
+}
+
+.icon {
+  vertical-align: top;
+
+  circle,
+  path {
+    fill: currentColor;
+  }
+}

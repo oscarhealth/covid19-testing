@@ -1,0 +1,78 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.item {
+  align-items: center;
+  background-color: $color-white;
+  border: $anatomy-border-width solid $color-border-gray-dark;
+  border-radius: $anatomy-border-radius;
+  box-sizing: border-box;
+  display: flex;
+  min-width: $anatomy-field-min-width;
+  position: relative;
+  transition: border-color $transition-normal $anatomy-field-easing-curve;
+  width: 100%;
+
+  &:hover {
+    border-color: $color-text-light;
+  }
+
+  &.item_isFocused {
+    border-color: $color-blue-black;
+  }
+
+  &.item_disabled {
+    background-color: $color-border-gray;
+    border-color: $color-border-gray-dark;
+    cursor: not-allowed;
+  }
+
+  &.item_hasErrors {
+    border-color: $color-red;
+  }
+
+  &.item_noBorder {
+    border-color: transparent;
+  }
+}
+
+.item_size-small {
+  min-height: $anatomy-contained-small-item-height;
+}
+
+.item_size-small.item_fixedHeight {
+  height: $anatomy-contained-small-item-height;
+}
+
+.item_size-medium {
+  min-height: $anatomy-contained-medium-item-height;
+}
+
+.item_size-medium.item_fixedHeight {
+  height: $anatomy-contained-medium-item-height;
+}
+
+.leftChild {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.rightChild {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.middleChild {
+  border-radius: 0;
+}
+
+.leftChild,
+.rightChild,
+.middleChild {
+  transition: z-index $transition-normal $anatomy-field-easing-curve;
+
+  &.item_isFocused {
+    position: relative;
+    z-index: $base-z + 1;
+  }
+}

@@ -1,0 +1,22 @@
+@import 'accessibility';
+
+.textLink {
+  color: #005ea2;
+  text-decoration: underline;
+
+  &:hover {
+    color: #1a4480;
+  }
+
+  &:active {
+    color: #162e51;
+  }
+
+  &:focus {
+    @include high-contrast-outline;
+  }
+
+  &:visited {
+    color: #562b97;
+  }
+}

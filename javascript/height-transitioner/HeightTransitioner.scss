@@ -1,0 +1,5 @@
+@import 'javascript/anatomy/style/constants';
+
+.container {
+  transition: height $transition-quick ease-in-out;
+}

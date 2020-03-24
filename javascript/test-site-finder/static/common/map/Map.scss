@@ -1,0 +1,111 @@
+@import 'javascript/anatomy/style/constants';
+
+// This mimics the google map zoom buttons and is not consistent with other styles
+// The reason this is needed is because there is no zoom event that can be bound to
+// through the google maps api, so this recreates those zoom elements
+$google-maps-zoom-container-box-shadow: rgba(0, 0, 0, 0.298039);
+$google-maps-zoom-split-background-color: rgb(230, 230, 230);
+
+.zoomControlContainer {
+  background-color: $color-white;
+  border-radius: 2px;
+  bottom: 2 * $standard-buffer;
+  box-shadow: $google-maps-zoom-container-box-shadow 0 1px 4px -1px;
+  cursor: pointer;
+  height: 55px;
+  left: $standard-buffer;
+  position: absolute;
+  width: 28px;
+  z-index: $popout-z;
+}
+
+.zoomSplit {
+  background-color: $google-maps-zoom-split-background-color;
+  height: 1px;
+  left: 5px;
+  overflow: hidden;
+  position: absolute;
+  top: 26px;
+  width: 67%;
+}
+
+.zoomInClickable,
+.zoomOutClickable {
+  height: 27px;
+  width: 28px;
+}
+
+.zoomInContainer {
+  height: 15px;
+  left: 7px;
+  overflow: hidden;
+  position: absolute;
+  top: 6px;
+  width: 15px;
+}
+
+.zoomInButton {
+  border: 0;
+  height: 54px;
+  left: 0;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 120px;
+}
+
+.zoomInContainer:hover .zoomInButton,
+.zoomInContainer:focus .zoomInButton,
+.zoomInContainer:active .zoomInButton {
+  border: 0;
+  height: 54px;
+  left: -30px;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 120px;
+}
+
+.zoomOutContainer {
+  height: 15px;
+  left: 7px;
+  overflow: hidden;
+  position: absolute;
+  top: 32px;
+  width: 15px;
+}
+
+.zoomOutButton {
+  border: 0;
+  height: 54px;
+  left: 0;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  position: absolute;
+  top: -15px;
+  width: 120px;
+}
+
+.zoomOutContainer:hover .zoomOutButton,
+.zoomOutContainer:focus .zoomOutButton,
+.zoomOutContainer:active .zoomOutButton {
+  left: -30px;
+}
+
+.searchTriggerButton {
+  left: $standard-buffer;
+  position: absolute;
+  top: $standard-buffer;
+  z-index: $popout-z;
+}
+
+.map {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}

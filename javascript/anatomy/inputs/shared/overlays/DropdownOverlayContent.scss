@@ -1,0 +1,69 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+$max-dropdown-height: 300px;
+$max-dropdown-height-without-padding: $max-dropdown-height - 34px;
+$placeholder-height: 30px;
+
+.overlay {
+  background-color: $color-white;
+  border: $anatomy-border-width solid $color-border-gray-dark;
+  border-radius: 0 0 $anatomy-border-radius $anatomy-border-radius;
+  box-shadow: $anatomy-box-shadow-medium;
+  box-sizing: border-box;
+  cursor: pointer;
+  max-height: $max-dropdown-height;
+  overflow: hidden;
+  padding: $anatomy-field-padding * 4 0;
+  pointer-events: auto;
+  position: relative;
+  transform-origin: top;
+  transition: opacity $transition-normal $anatomy-field-easing-curve;
+
+  &.overlay_inverted {
+    transform: translateY(-100%);
+  }
+}
+
+// This is needed to prevent the scrollbar from briefly appearing during height transitions
+@keyframes delay-overflow {
+  from {
+    overflow: hidden;
+  }
+}
+
+.overlay_autoOverflow {
+  animation: delay-overflow 600ms;
+  overflow: auto;
+}
+
+.overlay_inverted {
+  border-radius: $anatomy-border-radius $anatomy-border-radius 0 0;
+  transform-origin: bottom;
+}
+
+.overlay_hidden {
+  border-style: none;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.placeholderWrapper {
+  color: $color-light-blue;
+  height: $max-dropdown-height-without-padding;
+  overflow: hidden;
+  position: relative;
+}
+
+.placeholder {
+  align-items: center;
+  display: flex;
+  height: $placeholder-height;
+  justify-content: center;
+  left: 0;
+  padding: 0 $anatomy-field-padding * 4;
+  position: absolute;
+  right: 0;
+  top: calc((#{$max-dropdown-height-without-padding} - #{$placeholder-height}) / 2);
+}

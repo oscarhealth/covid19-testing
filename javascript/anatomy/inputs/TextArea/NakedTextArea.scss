@@ -1,0 +1,47 @@
+@import 'javascript/anatomy/style/constants';
+@import 'javascript/anatomy/inputs/shared/anatomy_constants';
+
+.input {
+  background-color: transparent;
+  border: 0;
+  color: $color-blue-black;
+  font-family: $font-source-sans-pro;
+  font-weight: $font-weight-normal;
+  padding: 0;
+  resize: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.input_disabled {
+  color: $color-text-light;
+}
+
+.input_hasErrors {
+  color: $color-red;
+}
+
+.input_size-small {
+  font-size: $anatomy-small-font-size;
+  line-height: $anatomy-small-text-line-height;
+  padding-bottom: $anatomy-field-padding * 2;
+  padding-top: $anatomy-small-font-size;
+}
+
+.input_size-small.input_hasFieldHeader {
+  padding-top: $anatomy-small-font-size + $anatomy-field-padding * 2;
+}
+
+.input_size-medium {
+  font-size: $anatomy-medium-font-size;
+  line-height: $anatomy-medium-text-line-height;
+  padding-bottom: $anatomy-field-padding * 2;
+  padding-top: $anatomy-medium-font-size;
+}
+
+.input_size-medium.input_hasFieldHeader {
+  padding-top: $anatomy-medium-font-size + $anatomy-field-padding * 2;
+}
