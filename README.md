@@ -22,3 +22,14 @@ Key components of the site include:
     * View the app at the local URL of [http://localhost:8082](http://localhost:8082)
     * Search for sites around New York City in order to locate fake site data for testing the application.
 * Run webpack builds with `npm run build`
+
+## Features
+
+![landing page](LandingPage.png)
+
+![risk assessment page](RiskAssessment.png)
+
+![test site locator](TestSiteLocator.png)
+
+![location details](AppointmentDetails.png)
+
