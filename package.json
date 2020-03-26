@@ -37,6 +37,7 @@
     "component-raf": "1.2.0",
     "component-tween": "1.2.0",
     "css-loader": "2.1.1",
+    "dotenv": "8.2.0",
     "file-loader": "3.0.1",
     "focus-visible": "5.0.2",
     "glob": "6.0.4",
