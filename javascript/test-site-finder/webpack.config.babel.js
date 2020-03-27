@@ -6,13 +6,26 @@ import path from 'path';
 import RobotstxtPlugin from 'robotstxt-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import UnusedFilesWebpackPlugin from 'unused-files-webpack-plugin';
+import Dotenv from 'dotenv';
 import webpack from 'webpack';
 
-import {getAbsolutePath, getAbsoluteRootPath} from 'javascript/build_tools/webpack/paths';
+import {
+  getAbsolutePath,
+  getAbsoluteRootPath,
+} from 'javascript/build_tools/webpack/paths';
 import recursive from 'javascript/build_tools/webpack/recursive';
 
+// Load ENV config options from `.env` file.
+Dotenv.config();
+
 const debug = process.argv.indexOf('--debug') > -1; // eslint-disable-line no-undef
-const GOOGLE_MAPS_API_KEY = '"REPLACE_WITH_GOOGLE_MAPS_API_KEY"';
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+if (!GOOGLE_MAPS_API_KEY) {
+  console.error(process.env);
+  throw new Error(
+    'GOOGLE_MAPS_API_KEY environment variable missing. You can specify with `GOOGLE_MAPS_API_KEY="YOUR_KEY" npm run build` or add `.env` with `GOOGLE_MAPS_API_KEY="YOUR_API_KEY"'
+  );
+}
 
 const getChunkName = function(ext, hashType = 'chunkhash') {
   const chunkNameArr = ['[name]'];
@@ -46,7 +59,7 @@ const plugins = [
 
   new webpack.DefinePlugin({
     // This is used to determine the feature namespace for Anatomy configuration
-    __DEBUG__: debug,
+    '__DEBUG__': debug,
 
     /**
      * "Internal props" are props that expose normally-private behavior for
@@ -54,13 +67,13 @@ const plugins = [
      * rendering a modal as a block-level element instead of taking over the
      * page or rendering buttons in a focused/hovered/depressed state.
      */
-    __INTERNAL_PROPS_ALLOWED__: false,
+    '__INTERNAL_PROPS_ALLOWED__': false,
 
     // In production, set the equivalent of NODE_ENV to "production" so that
     // React dev warnings are minified out.
-    'process.env': debug ? {} : {NODE_ENV: '"production"',},
+    'process.env': debug ? {} : {NODE_ENV: '"production"'},
 
-    'GOOGLE_MAPS_API_KEY': GOOGLE_MAPS_API_KEY
+    'GOOGLE_MAPS_API_KEY': JSON.stringify(GOOGLE_MAPS_API_KEY),
   }),
 
   new HtmlWebpackPlugin({
@@ -71,7 +84,7 @@ const plugins = [
 
   new UnusedFilesWebpackPlugin(),
 
-  new RobotstxtPlugin({policy: [{userAgent: '*', disallow: '/'}]})
+  new RobotstxtPlugin({policy: [{userAgent: '*', disallow: '/'}]}),
 ];
 
 if (debug) {
@@ -88,7 +101,7 @@ if (!debug) {
       // content
       filename: getChunkName('.css', 'contenthash'),
       publicPath: 'dist',
-    }),
+    })
   );
 }
 
@@ -109,7 +122,7 @@ let config = {
     hot: true,
     inline: true,
     headers: {'Access-Control-Allow-Origin': '*'},
-    publicPath: 'http://0.0.0.0:8082/'
+    publicPath: 'http://0.0.0.0:8082/',
   },
   entry: {
     app: [
@@ -117,13 +130,13 @@ let config = {
       'focus-visible',
       path.resolve(SOURCE_PATH, 'index.jsx'),
       ...getAllFiles(/(\.jpg|\.gif|\.png|\.ico)$/i, SOURCE_PATH),
-      ...getAllFiles(/(\.mp4|\.ogv|\.webm|\.swf)$/i, SOURCE_PATH)
+      ...getAllFiles(/(\.mp4|\.ogv|\.webm|\.swf)$/i, SOURCE_PATH),
     ],
   },
   output: {
     filename: getChunkName('.js'),
     path: path.resolve(__dirname, 'dist'),
-    publicPath: debug ? '/' : ''
+    publicPath: debug ? '/' : '',
   },
   mode: debug ? 'development' : 'production',
   module: {
@@ -136,7 +149,7 @@ let config = {
           options: {
             cacheDirectory: true,
           },
-        }
+        },
       },
       {
         test: /\.s?css$/,
@@ -151,25 +164,21 @@ let config = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [
-                require('autoprefixer')
-              ],
-            }
+              plugins: [require('autoprefixer')],
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [
-                path.resolve(SOURCE_PATH, 'scss')
-              ],
+              includePaths: [path.resolve(SOURCE_PATH, 'scss')],
               outputStyle: debug ? 'expanded' : 'compressed',
-            }
-          }
+            },
+          },
         ],
       },
       {
         test: /(\.jpg|\.gif|\.png|\.ico)$/i,
-        use: {loader: 'file-loader'}
+        use: {loader: 'file-loader'},
       },
       {
         test: /\.svg$/,
@@ -178,39 +187,30 @@ let config = {
           options: {
             limit: 10000,
             mimetype: 'image/svg+xml',
-          }
-        }
+          },
+        },
       },
       {
         test: /(\.yml|\.yaml)$/,
-        use: [
-          'json-loader',
-          'yaml-loader'
-        ]
+        use: ['json-loader', 'yaml-loader'],
       },
-    ]
+    ],
   },
   node: {
     fs: 'empty',
   },
   optimization: {
-    minimizer: [
-      new TerserPlugin(),
-    ],
+    minimizer: [new TerserPlugin()],
   },
   plugins,
   resolve: {
-    modules: [
-      'node_modules',
-      ROOT_PATH,
-      SOURCE_PATH
-    ],
+    modules: ['node_modules', ROOT_PATH, SOURCE_PATH],
     extensions: ['.webpack.js', '.web.js', '.js', '.jsx'],
-    alias: debug ? {'react-dom': '@hot-loader/react-dom'} : {}
+    alias: debug ? {'react-dom': '@hot-loader/react-dom'} : {},
   },
   stats: {
     colors: debug,
-  }
+  },
 };
 
 export default config;

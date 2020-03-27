@@ -1,0 +1,11 @@
+[template.environment]
+  GOOGLE_MAPS_API_KEY = "Change me to your Google Maps API Key"
+
+[build]
+  command = "npm run build"
+  publish = "javascript/test-site-finder/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

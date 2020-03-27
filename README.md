@@ -9,13 +9,18 @@ Key components of the site include:
 - A recommendation engine to recommend testing window slots at each testing site
 - A confirmation page to surface any critical information to prepare the user for testing
 
+
+## Quickstart
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/oscarhealth/covid19-testing)
+
 ## Getting Started
 
 * Install [Node.js](https://nodejs.org/en/) >= 8.9.4 and npm >= 5.6.0
     * Check your node version with `node -v`
     * Check your npm version with `npm -v`
 * Clone this repo and change directory to the cloned repo
-* Add your Google Maps API key to `javascript/test-site-finder/webpack.config.babel.js`
+* Add your Google Maps API key to a file named `.env` (see `example.env`) or pass in the command line as `GOOGLE_MAPS_API_KEY`.
     * Replace `REPLACE_WITH_GOOGLE_MAPS_API_KEY` with yours
 * Install dependencies with `npm install`
 * Run webpack dev with `npm run webpack-dev`
